@@ -45,6 +45,6 @@ jobs:
         working-directory: ./my-app
         run: yarn install
 
-      # - name: Run test
-      #   working-directory: ./my-app
-      #   run: yarn test -- --coverage
+      - name: Run test
+        working-directory: ./my-app
+        run: yarn test
