@@ -17,16 +17,17 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: use Node
+      - uses: actions/checkout@v3
         with:
           node-version: '10.16.1'
 
       - name: yarn install
-        working-directory: ./my-app
-        run: yarn install
+      - working-directory: ./my-app
+      - run: yarn install
 
-      - name: Run test
-        working-directory: ./my-app
-        run: yarn test -- --coverage
+      # - name: Run test
+      #   working-directory: ./my-app
+      #   run: yarn test -- --coverage
 
   # # This workflow contains a single job called "build"
   # build:
