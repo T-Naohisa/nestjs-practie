@@ -6,29 +6,25 @@ name: MY-APP-CI
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
-    branches: ['main']
-  # pull_request:
-  #   branches: ['main']
-
+    branches: [main]
   # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  test:
-    runs-on: ubuntu-latest
+  # test:
+  #   runs-on: ubuntu-latest
 
-    steps:
-      - uses: actions/checkout@v3
-      - name: use Node
-        with:
-          node-version: '10.16.1'
-      - name: yarn install
-        working-directory: ./my-app
-        run: yarn install
-      - name: Run test
-        working-directory: ./my-app
-        run: yarn test -- --coverage
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #     - name: use Node
+  #       with:
+  #         node-version: '10.16.1'
+  #     - name: yarn install
+  #       working-directory: ./my-app
+  #       run: yarn install
+  #     - name: Run test
+  #       working-directory: ./my-app
+  #       run: yarn test -- --coverage
 
   # This workflow contains a single job called "build"
   build:
