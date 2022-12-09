@@ -1,8 +1,9 @@
-import { Controller, Get, Post, Req, Body } from '@nestjs/common';
+import { Controller, Get, Post, Req, Body, UseFilters } from '@nestjs/common';
 import { FastifyRequest, FastifyReply } from 'fastify';
 import { CreateCatDto } from 'src/dto/cats.dto';
 import { CatsService } from 'src/service/cats.service';
 import { Cat } from 'src/interface/cat.intercafe';
+import { HttpExceptionFilter } from 'src/filter/http-exception.filter';
 
 @Controller('cats')
 export class CatsController {
@@ -10,7 +11,13 @@ export class CatsController {
   // メンバの宣言と初期化を行う
   constructor(private catsService: CatsService) {}
 
+  /**
+   * HttpExceptionFilterのインスタンスを生成している
+   * クラスのほうがメモリ使用量を削減できる
+   *
+   */
   @Post()
+  @UseFilters(new HttpExceptionFilter())
   async create(@Body() createCatDto: CreateCatDto) {
     this.catsService.create(createCatDto);
 
