@@ -1,13 +1,18 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Body, ValidationPipe } from '@nestjs/common';
 import { Cat } from '../interface/cat.intercafe';
+import { CreateCatDto } from 'src/dto/cats.dto';
 
 @Injectable()
 export class CatsService {
   private readonly cats: Cat[] = [];
-  create(cat: Cat) {
-    this.cats.push(cat);
+  // bodyにバインドして検証が行える
+  create(@Body(new ValidationPipe()) createCatDto: CreateCatDto) {
+    this.cats.push(createCatDto);
   }
   findAll(): Cat[] {
     return this.cats;
+  }
+  findOne(id: number) {
+    return id;
   }
 }
