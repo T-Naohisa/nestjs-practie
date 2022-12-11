@@ -7,13 +7,16 @@ import {
   Body,
   UseFilters,
   ParseIntPipe,
+  UseInterceptors,
 } from '@nestjs/common';
 import { FastifyRequest, FastifyReply } from 'fastify';
 import { CreateCatDto } from 'src/dto/cats.dto';
 import { CatsService } from 'src/service/cats.service';
 import { Cat } from 'src/interface/cat.intercafe';
 import { HttpExceptionFilter } from 'src/filter/http-exception.filter';
+import { LoggingInterceptor } from 'src/intersepter/logging.intercepter';
 
+@UseInterceptors(LoggingInterceptor)
 @Controller('cats')
 export class CatsController {
   // コンストラクタで注入する
