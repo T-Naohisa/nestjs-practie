@@ -15,6 +15,7 @@ import { CatsService } from 'src/service/cats.service';
 import { Cat } from 'src/interface/cat.intercafe';
 import { HttpExceptionFilter } from 'src/filter/http-exception.filter';
 import { LoggingInterceptor } from 'src/intersepter/logging.intercepter';
+import { User } from 'src/decorator/user.decorator';
 
 @UseInterceptors(LoggingInterceptor)
 @Controller('cats')
@@ -48,7 +49,10 @@ export class CatsController {
    * @returns
    */
   @Get(':id')
-  async findOne(@Param('id', ParseIntPipe) id: number) {
+  async findOne(
+    // @User('firstName') firstName: string,
+    @Param('id', ParseIntPipe) id: number,
+  ) {
     return this.catsService.findOne(id);
   }
 }

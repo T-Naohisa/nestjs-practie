@@ -7,7 +7,12 @@ import { CatsService } from './service/cats.service';
 @Global()
 @Module({
   controllers: [CatsController],
-  providers: [CatsService],
+  providers: [
+    {
+      provide: CatsService,
+      useClass: CatsService,
+    },
+  ],
   // 複数のモジュールで扱いたい場合exportする
   exports: [CatsService],
 })
