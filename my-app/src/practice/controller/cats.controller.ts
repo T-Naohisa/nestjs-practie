@@ -10,12 +10,12 @@ import {
   UseInterceptors,
 } from '@nestjs/common';
 import { FastifyRequest, FastifyReply } from 'fastify';
-import { CreateCatDto } from 'src/dto/cats.dto';
-import { CatsService } from 'src/service/cats.service';
-import { Cat } from 'src/interface/cat.intercafe';
-import { HttpExceptionFilter } from 'src/filter/http-exception.filter';
-import { LoggingInterceptor } from 'src/intersepter/logging.intercepter';
-import { User } from 'src/decorator/user.decorator';
+import { CreateCatDto } from 'src/practice/dto/cats.dto';
+import { CatsService } from 'src/practice/service/cats.service';
+import { Cat } from 'src/practice/interface/cat.intercafe';
+import { HttpExceptionFilter } from 'src/practice/filter/http-exception.filter';
+import { LoggingInterceptor } from 'src/practice/intersepter/logging.intercepter';
+import { User } from 'src/practice/decorator/user.decorator';
 
 @UseInterceptors(LoggingInterceptor)
 @Controller('cats')

@@ -1,6 +1,6 @@
 import { Module, Global } from '@nestjs/common';
-import { CatsController } from './controller/cats.controller';
-import { CatsService } from './service/cats.service';
+import { CatsController } from './practice/controller/cats.controller';
+import { CatsService } from './practice/service/cats.service';
 
 // Globalスコープにするとどこでも利用が可能になる
 // moduleをimportする必要がない

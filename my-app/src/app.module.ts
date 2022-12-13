@@ -2,7 +2,7 @@ import { Module, NestModule, MiddlewareConsumer } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { CatsModule } from './cats.module';
-import { LoggerMiddleware } from './middleware/logger.middleware';
+import { LoggerMiddleware } from './practice/middleware/logger.middleware';
 
 @Module({
   imports: [CatsModule],
