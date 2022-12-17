@@ -1,7 +1,6 @@
 import { Injectable, Body, ValidationPipe } from '@nestjs/common';
 import { Cat } from '../interface/cat.intercafe';
-import { CreateCatDto } from 'src/practice/dto/cats.dto';
-
+import { CreateCatDto } from 'practice/dto/cats.dto';
 @Injectable()
 export class CatsService {
   private readonly cats: Cat[] = [];
