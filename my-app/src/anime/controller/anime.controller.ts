@@ -8,7 +8,7 @@ import { Controller, Get } from '@nestjs/common';
 @Controller('anime')
 export class AnimeController {
   @Get()
-  async findAnimetionInfo() {
+  findAnimetionInfo(): string {
     return 'アニメ情報を返す';
   }
 }
