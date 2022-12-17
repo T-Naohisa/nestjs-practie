@@ -1,5 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { AnimeController } from '../../../anime/controller/anime.controller';
+import { AnimeController } from '../../../anime/controllers/anime.controller';
 
 describe('AnimeController', () => {
   let animeController: AnimeController;
