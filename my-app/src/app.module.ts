@@ -14,8 +14,9 @@ import { LoggerMiddleware } from './practice/middleware/logger.middleware';
  * ミドルウェアを含むモジュールはNestModuleインターフェースを実装する必要がる
  * applyでミドルウェアを指定する
  */
-export class AppModule implements NestModule {
-  configure(consumer: MiddlewareConsumer) {
-    consumer.apply(LoggerMiddleware).forRoutes('cats');
-  }
-}
+export class AppModule {}
+// export class AppModule implements NestModule {
+//   configure(consumer: MiddlewareConsumer) {
+//     consumer.apply(LoggerMiddleware).forRoutes('cats');
+//   }
+// }
